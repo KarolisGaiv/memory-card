@@ -4,6 +4,20 @@ import Card from './components/Card/Card';
 
 function App() {
   const [userChoice, setUserChoice] = useState([]);
+
+  const currencyArray = [
+    'Maven Orb',
+    'Awakener Orb',
+    'Exalted Orb',
+    'Tailoring Orb',
+    'Chaos Orb',
+    'Divine Orb',
+    'Ancient Orb',
+    'Regal Orb',
+    'Vaal Orb',
+    'Chromatic Orb',
+  ];
+
   // function click(e) {
   //   console.log(e.target);
   // }
@@ -23,6 +37,15 @@ function App() {
   //   }
   // }
 
+  function generateRandomArray() {
+    const randomArray = [];
+    for (let i = 0; i < 5; i++) {
+      let index = Math.floor(Math.random() * 10);
+      randomArray.push(currencyArray[index]);
+    }
+    console.log(randomArray);
+  }
+
   function click(e) {
     console.log(e.target.id);
     setUserChoice((prevArr) => [...prevArr, e.target.id]);
@@ -33,6 +56,7 @@ function App() {
     <div className='App'>
       <header className='App-header'>Hi There!</header>
       <main>
+        {generateRandomArray()}
         <Card test={'Shit'} onClick={click} />
       </main>
     </div>
