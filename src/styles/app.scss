@@ -1,2 +1,9 @@
 @import 'mixins/mixins';
 @import 'base/base';
+
+body {
+  height: 100vh;
+  margin: 0 auto;
+  text-align: center;
+  width: 80vh;
+}
