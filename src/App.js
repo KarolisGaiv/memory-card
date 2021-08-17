@@ -1,11 +1,12 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import './styles/app.scss';
 import Card from './components/Card/Card';
 
 function App() {
+  const [currencyArray, setCurrencyArray] = useState([]);
   const [userChoice, setUserChoice] = useState([]);
 
-  const currencyArray = [
+  const dataBase = [
     'Maven Orb',
     'Awakener Orb',
     'Exalted Orb',
@@ -18,45 +19,28 @@ function App() {
     'Chromatic Orb',
   ];
 
-  // function click(e) {
-  //   console.log(e.target);
-  // }
-
-  // function generateRandomArr() {
-  //   const array = Array.from({ length: 5 }, () =>
-  //     Math.floor(Math.random() * 6)
-  //   );
-  //   return array;
-  // }
-
-  // function generateRandomCards() {
-  //   let array = generateRandomArr();
-  //   console.log(array);
-  //   for (const number of array) {
-  //     console.log(number);
-  //   }
-  // }
+  useEffect(() => {
+    generateRandomArray();
+  }, []);
 
   function generateRandomArray() {
     const randomArray = [];
     for (let i = 0; i < 5; i++) {
       let index = Math.floor(Math.random() * 10);
-      randomArray.push(currencyArray[index]);
+      randomArray.push(dataBase[index]);
     }
-    console.log(randomArray);
+    setCurrencyArray(randomArray);
   }
 
   function click(e) {
-    console.log(e.target.id);
     setUserChoice((prevArr) => [...prevArr, e.target.id]);
-    console.log(userChoice);
   }
 
   return (
     <div className='App'>
       <header className='App-header'>Hi There!</header>
       <main>
-        {generateRandomArray()}
+        {console.log(currencyArray)}
         <Card test={'Shit'} onClick={click} />
       </main>
     </div>
