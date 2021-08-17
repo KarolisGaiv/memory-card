@@ -1,4 +1,15 @@
+@import '../../styles/mixins/mixins';
+
 .card {
   border: 1px solid black;
   border-radius: 5px;
+  @include flex-center;
+  height: 12rem;
+  width: 10rem;
+}
+
+p {
+  height: 100%;
+  margin: 0;
+  width: 100%;
 }
