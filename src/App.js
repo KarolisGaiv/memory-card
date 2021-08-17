@@ -4,7 +4,10 @@ import Card from './components/Card/Card';
 
 function App() {
   const [currencyArray, setCurrencyArray] = useState([]);
-  const [userChoice, setUserChoice] = useState([]);
+
+  useEffect(() => {
+    generateRandomArray();
+  }, []);
 
   const dataBase = [
     'Maven Orb',
@@ -19,10 +22,6 @@ function App() {
     'Chromatic Orb',
   ];
 
-  useEffect(() => {
-    generateRandomArray();
-  }, []);
-
   function generateRandomArray() {
     const randomArray = [];
     for (let i = 0; i < 5; i++) {
@@ -32,16 +31,14 @@ function App() {
     setCurrencyArray(randomArray);
   }
 
-  function click(e) {
-    setUserChoice((prevArr) => [...prevArr, e.target.id]);
-  }
-
   return (
     <div className='App'>
       <header className='App-header'>Hi There!</header>
       <main>
         {console.log(currencyArray)}
-        <Card test={'Shit'} onClick={click} />
+        {currencyArray.map((item) => {
+          return <Card name={item} key={item} />;
+        })}
       </main>
     </div>
   );
