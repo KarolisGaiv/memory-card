@@ -13,8 +13,8 @@ function App() {
   }, [userPicks]);
 
   const dataBase = [
-    'Maven Orb',
-    'Awakener Orb',
+    "Maven's Orb",
+    "Awakener's Orb",
     'Exalted Orb',
     'Tailoring Orb',
     'Chaos Orb',
@@ -23,12 +23,19 @@ function App() {
     'Regal Orb',
     'Vaal Orb',
     'Chromatic Orb',
+    'Orb of Annulment',
+    "Glassblower's Bauble",
+    "Cartographer's Chisel",
+    'Orb of Alchemy',
+    'Orb of Binding',
+    'Orb of Chance',
+    'Orb of Transmutation',
   ];
 
   function generateRandomArray() {
     const randomArray = [];
-    for (let i = 0; i < 5; i++) {
-      let index = Math.floor(Math.random() * 10);
+    for (let i = 0; i < 10; i++) {
+      let index = Math.floor(Math.random() * dataBase.length);
       randomArray.push(dataBase[index]);
     }
     return setCurrencyArray(randomArray);
