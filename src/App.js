@@ -5,6 +5,7 @@ import Card from './components/Card/Card';
 function App() {
   const [currencyArray, setCurrencyArray] = useState([]);
   const [userPicks, setUserPicks] = useState([]);
+  const [recordCounter, setRecordCounter] = useState(0);
 
   useEffect(() => {
     generateRandomArray();
@@ -29,15 +30,22 @@ function App() {
       let index = Math.floor(Math.random() * 10);
       randomArray.push(dataBase[index]);
     }
-    setCurrencyArray(randomArray);
+    return setCurrencyArray(randomArray);
   }
 
   function handleClick(e) {
-    console.log(userPicks);
     const targetCard = e.target.innerText;
-    console.log(targetCard);
     setUserPicks((prevPicks) => [...prevPicks, targetCard]);
-    console.log(userPicks);
+    calculateResult(userPicks, targetCard);
+  }
+
+  function calculateResult(previousTurns, currentTurn) {
+    if (previousTurns.includes(currentTurn)) {
+      setRecordCounter(0);
+      setUserPicks([]);
+    } else {
+      setRecordCounter(recordCounter + 1);
+    }
   }
 
   return (
@@ -47,7 +55,9 @@ function App() {
         {currencyArray.map((item, index) => {
           return <Card name={item} key={index} handleClick={handleClick} />;
         })}
+        {console.log(userPicks)}
       </main>
+      <div className='counter'>{recordCounter}</div>
     </div>
   );
 }
