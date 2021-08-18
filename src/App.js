@@ -5,7 +5,8 @@ import Card from './components/Card/Card';
 function App() {
   const [currencyArray, setCurrencyArray] = useState([]);
   const [userPicks, setUserPicks] = useState([]);
-  const [recordCounter, setRecordCounter] = useState(0);
+  const [currentScore, setCurrentScore] = useState(0);
+  const [bestScore, setBestScore] = useState(0);
 
   useEffect(() => {
     generateRandomArray();
@@ -41,11 +42,13 @@ function App() {
 
   function calculateResult(previousTurns, currentTurn) {
     if (previousTurns.includes(currentTurn)) {
-      setRecordCounter(0);
+      setCurrentScore(0);
       setUserPicks([]);
     } else {
-      setRecordCounter(recordCounter + 1);
+      setCurrentScore(currentScore + 1);
     }
+
+    bestScore < currentScore ? setBestScore(currentScore) : null;
   }
 
   return (
@@ -57,7 +60,8 @@ function App() {
         })}
         {console.log(userPicks)}
       </main>
-      <div className='counter'>{recordCounter}</div>
+      <div className='counter'>{currentScore}</div>
+      <div className='counter'>{bestScore}</div>
     </div>
   );
 }
