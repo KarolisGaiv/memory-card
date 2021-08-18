@@ -13,8 +13,8 @@ function App() {
   }, [userPicks]);
 
   const dataBase = [
-    "Maven's Orb",
-    "Awakener's Orb",
+    'Maven Orb',
+    'Awakener Orb',
     'Exalted Orb',
     'Tailoring Orb',
     'Chaos Orb',
@@ -24,8 +24,8 @@ function App() {
     'Vaal Orb',
     'Chromatic Orb',
     'Orb of Annulment',
-    "Glassblower's Bauble",
-    "Cartographer's Chisel",
+    'Glassblower Bauble',
+    'Cartographer Chisel',
     'Orb of Alchemy',
     'Orb of Binding',
     'Orb of Chance',
@@ -34,7 +34,7 @@ function App() {
 
   function generateRandomArray() {
     const randomArray = [];
-    for (let i = 0; i < 10; i++) {
+    for (let i = 0; i < 9; i++) {
       let index = Math.floor(Math.random() * dataBase.length);
       randomArray.push(dataBase[index]);
     }
@@ -62,10 +62,12 @@ function App() {
     <div className='App'>
       <header className='App-header'>Hi There!</header>
       <main className='content'>
-        {currencyArray.map((item, index) => {
-          return <Card name={item} key={index} handleClick={handleClick} />;
-        })}
-        {console.log(userPicks)}
+        <div className='card-wrapper'>
+          {currencyArray.map((item, index) => {
+            return <Card name={item} key={index} handleClick={handleClick} />;
+          })}
+          {console.log(userPicks)}
+        </div>
       </main>
       <div className='counter'>{currentScore}</div>
       <div className='counter'>{bestScore}</div>
