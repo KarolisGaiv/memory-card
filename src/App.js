@@ -13,8 +13,8 @@ function App() {
   }, [userPicks]);
 
   const dataBase = [
-    'Maven Orb',
-    'Awakener Orb',
+    "Maven's Orb",
+    "Awakener's Orb",
     'Exalted Orb',
     'Tailoring Orb',
     'Chaos Orb',
@@ -24,8 +24,8 @@ function App() {
     'Vaal Orb',
     'Chromatic Orb',
     'Orb of Annulment',
-    'Glassblower Bauble',
-    'Cartographer Chisel',
+    "Glassblower's Bauble",
+    "Cartographer's Chisel",
     'Orb of Alchemy',
     'Orb of Binding',
     'Orb of Chance',

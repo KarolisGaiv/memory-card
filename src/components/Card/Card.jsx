@@ -20,9 +20,9 @@ import transmutationOrb from '../../assets/transmutation.png';
 function Card({ name, handleClick }) {
   function getIcon(currency) {
     switch (currency) {
-      case 'Maven Orb':
+      case "Maven's Orb":
         return mavenOrb;
-      case 'Awakener Orb':
+      case "Awakener's Orb":
         return awakenerOrb;
       case 'Exalted Orb':
         return exaltedOrb;
@@ -42,9 +42,9 @@ function Card({ name, handleClick }) {
         return chromaticOrb;
       case 'Orb of Annulment':
         return annulmentOrb;
-      case 'Glassblower Bauble':
+      case "Glassblower's Bauble":
         return glassblower;
-      case 'Cartographer Chisel':
+      case "Cartographer's Chisel":
         return cartographer;
       case 'Orb of Alchemy':
         return alchemyOrb;
