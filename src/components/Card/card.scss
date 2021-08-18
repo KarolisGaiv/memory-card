@@ -1,16 +1,23 @@
 @import '../../styles/mixins/mixins';
+@import '../../styles//base/base';
+
+$_anakiwa: #b2e0ff;
 
 .card {
-  border: 1px solid black;
+  background: $vista_blue;
+  border: 1px solid $_anakiwa;
   border-radius: 5px;
+  cursor: pointer;
   // @include flex-center;
   height: 12rem;
   margin: 5px;
   width: 10rem;
+
+  &:hover {
+    background: #98f5cd;
+  }
 }
 
-// p {
-//   height: 100%;
-//   margin: 0;
-//   width: 100%;
-// }
+.title {
+  margin: 2em;
+}

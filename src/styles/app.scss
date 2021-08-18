@@ -2,15 +2,21 @@
 @import 'base/base';
 
 body {
+  background: $chatelle;
   font-family: $main-font;
-  height: 100vh;
+  // height: 100vh;
   margin: 0 auto;
   text-align: center;
   width: 80vh;
 }
 
+.header {
+  color: $bahama_blue;
+}
+
 .content {
   display: flex;
+  margin: 2rem 0;
 }
 
 .card-wrapper {
@@ -20,5 +26,6 @@ body {
 }
 
 .counter {
-  font-size: $size-24;
+  color: $bahama_blue;
+  font-size: $size-36;
 }

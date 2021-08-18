@@ -61,7 +61,7 @@ function Card({ name, handleClick }) {
 
   return (
     <div className='card' id={name} onClick={handleClick}>
-      <p>{name}</p>
+      <p className='title'>{name}</p>
       <img src={getIcon(name)} alt='' />
     </div>
   );

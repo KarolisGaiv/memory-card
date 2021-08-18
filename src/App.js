@@ -60,17 +60,20 @@ function App() {
 
   return (
     <div className='App'>
-      <header className='App-header'>Hi There!</header>
+      <header className='header'>
+        <h1>Path Of Exile Currency Memory Game</h1>
+      </header>
       <main className='content'>
         <div className='card-wrapper'>
           {currencyArray.map((item, index) => {
             return <Card name={item} key={index} handleClick={handleClick} />;
           })}
-          {console.log(userPicks)}
         </div>
       </main>
-      <div className='counter'>{currentScore}</div>
-      <div className='counter'>{bestScore}</div>
+      <footer className='footer'>
+        <div className='counter'>Current score: {currentScore}</div>
+        <div className='counter'>Best score: {bestScore}</div>
+      </footer>
     </div>
   );
 }
