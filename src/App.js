@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import './styles/app.scss';
 import Card from './components/Card/Card';
+import { useSpring, animated } from 'react-spring';
 
 function App() {
   const [currencyArray, setCurrencyArray] = useState([]);
@@ -58,18 +59,26 @@ function App() {
     bestScore < currentScore ? setBestScore(currentScore) : null;
   }
 
+  const props = useSpring({
+    to: { opacity: 1 },
+    from: { opacity: 0 },
+    config: { delay: 1000, duration: 1000 },
+  });
+
   return (
     <div className='App'>
       <header className='header'>
         <h1>Path Of Exile Currency Memory Game</h1>
       </header>
-      <main className='content'>
-        <div className='card-wrapper'>
-          {currencyArray.map((item, index) => {
-            return <Card name={item} key={index} handleClick={handleClick} />;
-          })}
-        </div>
-      </main>
+      <animated.div style={props}>
+        <main className='content'>
+          <div className='card-wrapper'>
+            {currencyArray.map((item, index) => {
+              return <Card name={item} key={index} handleClick={handleClick} />;
+            })}
+          </div>
+        </main>
+      </animated.div>
       <footer className='footer'>
         <div className='counter'>Current score: {currentScore}</div>
         <div className='counter'>Best score: {bestScore}</div>
