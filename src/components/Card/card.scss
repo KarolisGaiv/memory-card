@@ -8,13 +8,16 @@ $_anakiwa: #b2e0ff;
   border: 1px solid $_anakiwa;
   border-radius: 5px;
   cursor: pointer;
-  // @include flex-center;
   height: 12rem;
   margin: 5px;
   width: 10rem;
 
   &:hover {
     background: #98f5cd;
+  }
+
+  @media (max-width: $breakpoint-iphone) {
+    height: 10rem;
   }
 }
 

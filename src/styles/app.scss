@@ -7,6 +7,10 @@ body {
   margin: 0 auto;
   text-align: center;
   max-width: 70vh;
+
+  @media (max-width: $breakpoint-laptop) {
+    max-width: 50vh;
+  }
 }
 
 .header {
